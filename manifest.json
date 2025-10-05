@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "BetterSSB - Inject RMP Rating",
+  "version": "1.0",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "https://prd-xereg.temple.edu/StudentRegistrationSsb/ssb/*",
+    "https://www.ratemyprofessors.com/*"
+  ],
+  "content_scripts": [
+    {
+      "js": ["page-script.js"],
+      "matches": ["https://prd-xereg.temple.edu/StudentRegistrationSsb/ssb/*"],
+      "world": "MAIN"
+    },
+    {
+      "js": ["content-script.js"],
+      "matches": ["https://prd-xereg.temple.edu/StudentRegistrationSsb/ssb/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
