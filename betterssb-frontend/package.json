@@ -1,0 +1,38 @@
+{
+  "name": "betterssb-frontend",
+  "displayName": "Betterssb frontend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Victor Jimenez-Lorenzo",
+  "scripts": {
+    "tw": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "tw:build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css",
+    "dev": "concurrently \"pnpm run tw\" \"plasmo dev\"",
+    "build": "pnpm run tw:build && plasmo build --zip"
+  },
+  "dependencies": {
+    "plasmo": "0.90.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.1.1",
+    "@tailwindcss/cli": "^4.1.14",
+    "@types/chrome": "0.0.258",
+    "@types/node": "20.11.5",
+    "@types/react": "18.2.48",
+    "@types/react-dom": "18.2.18",
+    "concurrently": "^9.2.1",
+    "prettier": "3.2.4",
+    "tailwindcss": "^4.1.14",
+    "typescript": "5.3.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://*/*"
+    ],
+    "permissions": [
+      "tabs"
+    ]
+  }
+}
